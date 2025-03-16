@@ -123,8 +123,10 @@ async function playRaceEngine(character1, character2) {
       if (powerResult1 > powerResult2 && character2.PONTOS > 0) {
         console.log(
           `${character1.NOME} venceu o confronto! ${character2.NOME} perdeu ${indexArma+1} ponto 🐢`
+          `${character1.NOME} venceu o confronto! Ganhou um turbo (+1 ponto)!`
         );
           character2.PONTOS = character2.PONTOS - (indexArma+1);
+          character1.PONTOS++;
         if (character2.PONTOS < 0) {
           character2.PONTOS = 0;
         } 
@@ -133,8 +135,10 @@ async function playRaceEngine(character1, character2) {
       if (powerResult2 > powerResult1 && character1.PONTOS > 0) {
         console.log(
           `${character2.NOME} venceu o confronto! ${character1.NOME} perdeu ${indexArma+1} ponto 🐢`
+          `${character2.NOME} venceu o confronto! Ganhou um turbo (+1 ponto)!`
         );
         character1.PONTOS = character1.PONTOS - (indexArma+1);
+        character2.PONTOS++;
         if (character1.PONTOS < 0) {
           character1.PONTOS = 0;
         } 
